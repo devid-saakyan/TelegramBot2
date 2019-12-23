@@ -31,6 +31,7 @@ def send_anything(message):
         bot.stop_polling()
 
 def obrabotka(message, data):
+    chat_id = message.chat.id
     if message.text.isdigit():
         for i in range(int(message.text)):
             bot.send_message(chat_id, ' 😱😱   🥅{}🥅 🆚🆚 🥅{}🥅  😱😱  ⏰ {} ⏰'.format(ans_h[i][0],ans_h[i][1], ans_h[i][2]))
