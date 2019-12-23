@@ -17,14 +17,14 @@ def send_welcome(message):
 def send_anything(message):
     chat_id = message.chat.id
     if message.text == '🏒🥅 Hockey (USA NXL 2019 - 2020)  🏒🥅':
-        bot.send_message(chat_id, '👇👇Введи числом количество матчей для показа (ИХ ОКОЛО 500) 👇👇')
+        bot.send_message(chat_id, '👇👇Введи числом количество матчей для показа (ИХ ОКОЛО 500) 👇👇',reply_markup = keyboard())
         bot.register_next_step_handler(message, obrabotka, ans_h)
     elif message.text == '🏀🏀 Basketball (VTB - United - League 2019-2020) 🏀🏀':
-        bot.send_message(chat_id, '👇👇Введи числом количество матчей для показа (ИХ ОКОЛО 500) 👇👇')
+        bot.send_message(chat_id, '👇👇Введи числом количество матчей для показа (ИХ ОКОЛО 500) 👇👇',reply_markup = keyboard())
         bot.register_next_step_handler(message, obrabotka2, ans_h)
     elif message.text == '❌STOP❌':
-        bot.send_message(chat_id, '❌❌ ДАННАЯ ФУНКЦИЯ В РАЗРАБОТКЕ, ПРОСИМ НЕ МУЧАТЬ ЕЁ ❌❌')
-
+        bot.send_message(chat_id, '❌❌ ДАННАЯ ФУНКЦИЯ В РАЗРАБОТКЕ, ПРОСИМ НЕ МУЧАТЬ ЕЁ ❌❌',reply_markup = keyboard())
+        bot.register_next_step_handler(message, send_anything)
 def obrabotka(message, data):
     chat_id = message.chat.id
     text1 = 'Лови список матчей по хоккею'
