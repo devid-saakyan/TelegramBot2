@@ -23,9 +23,7 @@ def send_anything(message):
         bot.send_message(chat_id, '👇👇Введи числом количество матчей для показа (ИХ ОКОЛО 500) 👇👇')
         bot.register_next_step_handler(message, obrabotka2, ans_h)
     elif message.text == '❌STOP❌':
-        bot.send_message(chat_id, '❌❌Бот остановлен❌❌')
-        bot.stop_polling()
-        bot.register_next_step_handler(message, send_welcome)
+        bot.send_message(chat_id, '❌❌ ДАННАЯ ФУНКЦИЯ В РАЗРАБОТКЕ, ПРОСИМ НЕ МУЧАТЬ ЕЁ ❌❌')
 
 def obrabotka(message, data):
     chat_id = message.chat.id
