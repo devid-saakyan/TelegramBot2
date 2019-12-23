@@ -32,7 +32,7 @@ def obrabotka(message, data):
         bot.send_message(chat_id, text1)
         for i in range(int(message.text)):
             bot.send_message(chat_id, ' 😱😱   🥅{}🥅 🆚🆚 🥅{}🥅  😱😱  ⏰ {} ⏰'.format(ans_h[i][0],ans_h[i][1], ans_h[i][2]), reply_markup = keyboard())
-            bot.register_next_step_handler(message, send_anything)
+        bot.register_next_step_handler(message, send_anything)
     else:
         bot.send_message(chat_id, "Введи число!!!!!!!!")
         bot.register_next_step_handler(message, obrabotka)
@@ -45,7 +45,7 @@ def obrabotka2(message, data):
         bot.send_message(chat_id, text2)
         for i in range(int(message.text)):
             bot.send_message(chat_id, ' 🧐🧐   🏀{}🏀   🆚🆚  🏀{}🏀   🧐🧐   ⏰ {} ⏰'.format(ans_b[i][0], ans_b[i][1], ans_b[i][2]), reply_markup = keyboard())
-            bot.register_next_step_handler(message, send_anything)
+        bot.register_next_step_handler(message, send_anything)
     else:
         bot.send_message(chat_id, "Введи число!!!!!!!!")
         bot.register_next_step_handler(message, obrabotka)
