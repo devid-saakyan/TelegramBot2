@@ -25,7 +25,7 @@ def send_anything(message):
     elif message.text == '❌STOP❌':
         bot.send_message(chat_id, '❌❌Бот остановлен❌❌')
         bot.stop_polling()
-        bot.register_next_step_handler(message, send_anything)
+        bot.register_next_step_handler(message, send_welcome)
 
 def obrabotka(message, data):
     chat_id = message.chat.id
@@ -34,16 +34,23 @@ def obrabotka(message, data):
         bot.send_message(chat_id, text1)
         for i in range(int(message.text)):
             bot.send_message(chat_id, ' 😱😱   🥅{}🥅 🆚🆚 🥅{}🥅  😱😱  ⏰ {} ⏰'.format(ans_h[i][0],ans_h[i][1], ans_h[i][2]), reply_markup = keyboard())
-    bot.register_next_step_handler(message, send_anything)
+            bot.register_next_step_handler(message, send_anything)
+    else:
+        bot.send_message(chat_id, "Введи число!!!!!!!!")
+        bot.register_next_step_handler(message, obrabotka)
 
+    
 def obrabotka2(message, data):
     chat_id = message.chat.id
     text2 = 'Лови список мачтей по баскетболу'
     if message.text.isdigit():
         bot.send_message(chat_id, text2)
         for i in range(int(message.text)):
-            bot.send_message(chat_id, ' 🧐🧐   🏀{}🏀   🆚🆚  🏀{}🏀   🧐🧐   ⏰ {} ⏰'.format(ans_b[i][0], ans_b[i][1], ans_b[i][2]))
-    bot.register_next_step_handler(message, send_anything)
+            bot.send_message(chat_id, ' 🧐🧐   🏀{}🏀   🆚🆚  🏀{}🏀   🧐🧐   ⏰ {} ⏰'.format(ans_b[i][0], ans_b[i][1], ans_b[i][2]), reply_markup = keyboard())
+            bot.register_next_step_handler(message, send_anything)
+    else:
+        bot.send_message(chat_id, "Введи число!!!!!!!!")
+        bot.register_next_step_handler(message, obrabotka)
                          
 def keyboard():
     markup = types.ReplyKeyboardMarkup(one_time_keyboard = True, resize_keyboard = True)
