@@ -19,13 +19,13 @@ def send_anything(message):
     if message.text == '🏒🥅 Hockey (USA NXL 2019 - 2020)  🏒🥅':
         text1 = 'Лови список матчей по хоккею'
         bot.send_message(chat_id, '👇👇Введи числом количество матчей для показа (ИХ ОКОЛО 500) 👇👇')
-        bot.send_message(chat_id, text1)
         bot.register_next_step_handler(message, obrabotka, ans_h)
+        bot.send_message(chat_id, text1)
     elif message.text == '🏀🏀 Basketball (VTB - United - League 2019-2020) 🏀🏀':
         text2 = 'Лови список мачтей по баскетболу'
         bot.send_message(chat_id, '👇👇Введи числом количество матчей для показа (ИХ ОКОЛО 500) 👇👇')
-        bot.send_message(chat_id, text2)
         bot.register_next_step_handler(message, obrabotka2, ans_h)
+        bot.send_message(chat_id, text2)
     elif message.text == '❌STOP❌':
         bot.send_message(chat_id, '❌❌Бот остановлен❌❌')
         bot.stop_polling()
