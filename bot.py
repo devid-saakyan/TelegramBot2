@@ -25,19 +25,14 @@ def send_anything(message):
         bot.send_message(chat_id, text2)
         for i in range(len(ans_b)):
             bot.send_message(chat_id, '🧐🧐   🏀{}🏀   🆚🆚  🏀{}🏀   🧐🧐   ⏰ {} ⏰'.format(ans_b[i][0], ans_b[i][1], ans_b[i][2]))
-    elif message.text == '🆘🆘STOP🆘🆘':
-        bot.send_message(chat_id, '❌❌Бот остановлен❌❌')
-        bot.stop_polling()
 
 
 def keyboard():
     markup = types.ReplyKeyboardMarkup(one_time_keyboard = True, resize_keyboard = True)
     btn1 = types.KeyboardButton('🏒🥅 Hockey (USA NXL 2019 - 2020)  🏒🥅')
     btn2 = types.KeyboardButton('🏀🏀 Basketball (VTB - United - League 2019-2020) 🏀🏀')
-    btn3 = types.KeyboardButton('🆘🆘STOP🆘🆘')
     markup.add(btn1)
     markup.add(btn2)
-    markup.add(btn3)
     return markup
 
 bot.polling()
