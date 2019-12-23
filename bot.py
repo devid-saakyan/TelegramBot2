@@ -37,6 +37,7 @@ def keyboard():
     btn3 = types.KeyboardButton('❌STOP❌')
     markup.add(btn1)
     markup.add(btn2)
+    markup.add(btn3)
     return markup
 
 bot.polling()
