@@ -12,8 +12,8 @@ ans_b = p.get_basketball()
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     bot.send_message(message.chat.id, '✅✅ВЫ ЗАПУСТИЛИ БОТ, НАЖМИТЕ НА НУЖНУЮ КНОПКУ ЧТОБЫ ПОЛУЧИТЬ СПИСОК МАТЧЕЙ✅✅', reply_markup = keyboard())
-
-@bot.message_handler(content_types=["text"])
+    bot.register_next_step_handler(message, send_anything)
+#bot.message_handler(content_types=["text"])
 def send_anything(message):
     chat_id = message.chat.id
     if message.text == '🏒🥅 Hockey (USA NXL 2019 - 2020)  🏒🥅':
