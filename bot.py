@@ -1,5 +1,6 @@
 import telebot
 from telebot import types
+from telebot.types import Message
 import pars as p
 TOKEN = '824645728:AAE6uCGHJGXgx9zdRVkPyUzOHI15oEvTCtE'
 bot = telebot.TeleBot(TOKEN)
