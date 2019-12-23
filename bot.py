@@ -25,6 +25,7 @@ def send_anything(message):
     elif message.text == '❌STOP❌':
         bot.send_message(chat_id, '❌❌Бот остановлен❌❌')
         bot.stop_polling()
+        bot.register_next_step_handler(message, send_anything)
 
 def obrabotka(message, data):
     chat_id = message.chat.id
